@@ -1,0 +1,14 @@
+/* 设置页面的高度和居中 */
+html, body {
+    height: 100%; /* 设置全局的高度为100% */
+    margin: 0; /* 清除默认 margin */
+    display: flex;
+    padding-left: 26px;
+    background: rgba(0, 0, 0, 0.1) url("./assets/img.png") no-repeat center center fixed; /* 设置背景图片 */
+    background-size: cover; /* 背景图片填充，保持比例 */
+}
+
+* {
+    font-size: 20px; /* 所有元素的字体大小 */
+    color: red; /* 所有元素的字体颜色 */
+}
