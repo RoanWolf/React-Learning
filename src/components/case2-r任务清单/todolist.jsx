@@ -44,7 +44,7 @@ export default () => {
         }
     ]);
 
-    // 插眼 回来学 大概是数据初始化执行
+    // 组件挂载时执行一次
     React.useEffect(() => {
         setTaskList(sortedTaskList([...taskList]));
     }, []);
