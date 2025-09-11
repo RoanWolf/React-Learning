@@ -1,14 +1,12 @@
-import Login from './components/case1-登录界面/login.jsx';
-import ToDoList from './components/case2-r任务清单/todolist.jsx'
-import AdviceComponent from "./components/case3-调用接口/AdviceComponent.jsx";
-
-
-export default  ()  => {
-    //return <Login />
-    //return <ToDoList />
-    return <>
-        <AdviceComponent />
+import NavBar from "./components/NavBar.jsx";
+import MemoList from "./components/MemoList.jsx";
+function App() {
+  return (
+    <>
+      <NavBar />
+      <MemoList />
     </>
-};
+  );
+}
 
-
+export default App;
