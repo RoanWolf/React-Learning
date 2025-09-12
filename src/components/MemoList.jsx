@@ -1,13 +1,9 @@
 import List from "@mui/material/List";
 import MemoListItem from "./MemoListItem";
+import { useLocalStorage } from "react-use";
 
 export default function MemoList() {
-  const memoItems = [
-    { id: 1, title: "代办事项 1", content: "这是第一条待办事项的内容" },
-    { id: 2, title: "代办事项 2", content: "这是第二条待办事项的内容" },
-    { id: 3, title: "代办事项 3", content: "这是第三条待办事项的内容" },
-    { id: 4, title: "代办事项 4", content: "这是第四条待办事项的内容" },
-  ];
+  const [memoItems, setMemoItems] = useLocalStorage("memo-list", []);
 
   return (
     <List sx={{ width: "100%", bgcolor: "background.paper" }}>
