@@ -14,7 +14,7 @@ export default function Add() {
     if (!title || !content) return;
 
     setNotes([...notes, { id: Date.now(), title, content }]);
-    toast("Add Successfully");
+    toast.success("Add Successfully");
     setTitle("");
     setContent("");
   }
