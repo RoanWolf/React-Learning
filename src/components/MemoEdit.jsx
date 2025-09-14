@@ -1,12 +1,13 @@
-import { useParams } from "react-router";
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
-import { useLocalStorage } from "react-use";
 import Fab from "@mui/material/Fab";
 import HomeIcon from "@mui/icons-material/Home";
-import { useNavigate } from "react-router";
 import Button from "@mui/material/Button";
-import toast, { Toaster } from "react-hot-toast";
+
+import { useState } from "react";
+import { useLocalStorage } from "react-use";
+import { useNavigate ,useParams} from "react-router";
+
+import toast from "react-hot-toast";
 
 export default function MemoEdit() {
   const { id } = useParams();
@@ -31,7 +32,7 @@ export default function MemoEdit() {
       return note;
     });
     setNotes(newNotes);
-    toast.success("updated successfully")
+    toast.success("updated successfully");
     navigate("/");
   }
 
@@ -58,7 +59,9 @@ export default function MemoEdit() {
           onChange={(e) => setContent(e.target.value)}
         />
       </div>
-      <Button variant="contained" onClick={updateNote}>Update</Button>
+      <Button variant="contained" onClick={updateNote}>
+        Update
+      </Button>
       <Fab
         color="primary"
         aria-label="add"

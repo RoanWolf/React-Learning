@@ -18,11 +18,8 @@ export default function MemoList({ searchContent }) {
         item.title.toLowerCase().includes(searchContent.toLowerCase())
       )
     );
-  }, [searchContent]);
+  }, [searchContent,memoItems]);
 
-  useEffect(() => {
-    setFilterItems(memoItems);
-  }, [memoItems]);
   function handleDelete(id) {
     setMemoItems(memoItems.filter((item) => item.id !== id));
     toast.error("deleted successfully")

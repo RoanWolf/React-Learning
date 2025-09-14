@@ -1,9 +1,17 @@
 import TextField from "@mui/material/TextField";
-import MemoListItem from "./MemoListItem";
 import { useState } from "react";
 import MemoList from "./MemoList";
+import { useSearchParams } from "react-router-dom";
 export default function Search() {
-  const [searchContent, setSearchContent] = useState("");
+  const [searchParams,setSearchParams] = useSearchParams();
+  const [searchContent, setSearchContent] = useState(searchParams.get("q") ||"");
+  
+  function onChange(e) {
+    const { value } = e.target;
+    setSearchContent(value);
+    setSearchParams({ q: value });
+  }
+  
   return (
     <>
       <TextField
@@ -12,7 +20,7 @@ export default function Search() {
         value={searchContent}
         focused
         fullWidth
-        onChange={(e) => setSearchContent(e.target.value)}
+        onChange={onChange}
       />
         <MemoList searchContent={searchContent} />
     </>
